@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130107010733) do
+ActiveRecord::Schema.define(version: 20160111163223) do
 
   create_table "orders", id: false, force: true do |t|
     t.string   "token"
@@ -26,6 +26,7 @@ ActiveRecord::Schema.define(version: 20130107010733) do
     t.string   "number"
     t.string   "uuid"
     t.string   "user_id"
+    t.integer  "project_id"
     t.decimal  "price"
     t.decimal  "shipping"
     t.string   "tracking_number"
@@ -44,6 +45,19 @@ ActiveRecord::Schema.define(version: 20130107010733) do
     t.string   "shipping_desc"
     t.string   "delivery_desc"
     t.integer  "limit"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "projects", force: true do |t|
+    t.string   "name"
+    t.string   "value_proposition"
+    t.decimal  "project_goal"
+    t.text     "description"
+    t.date     "expiration_date"
+    t.string   "image"
+    t.string   "video"
+    t.integer  "status"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

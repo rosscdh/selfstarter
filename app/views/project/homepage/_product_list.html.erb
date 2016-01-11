@@ -1,0 +1,12 @@
+<div class="gray_background">
+  <ul class="">
+  <% @projects.each do |project| %>
+  <li>
+    <h4><%= project.name %></h4>
+    <div id="video_image">
+      <img alt="video_place_holder" class="img img-responsive" src="@project.image" />
+    </div>
+  </li>
+  <% end %>
+  </ul>
+</div>

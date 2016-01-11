@@ -13,6 +13,7 @@ class CreateOrders < ActiveRecord::Migration
       t.string  :number
       t.string  :uuid
       t.string  :user_id
+      t.integer :project_id
       t.decimal :price
       t.decimal :shipping
       t.string  :tracking_number

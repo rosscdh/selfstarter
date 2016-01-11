@@ -4,10 +4,14 @@ ruby '2.0.0'
 
 gem 'rails', '4.0.0'
 gem 'json', '~> 1.7.7'
+gem 'rails_admin'
+gem 'devise'
 
 group :development do
   gem 'sqlite3'
   gem 'pry-rails'
+  gem 'better_errors'
+  gem 'binding_of_caller'
 end
 
 group :production do
