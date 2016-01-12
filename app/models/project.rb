@@ -2,6 +2,7 @@ class Project < ActiveRecord::Base
   delegate :url_helpers, :to => 'Rails.application.routes'
 
   has_many :orders
+  has_many :payment_option
 
   def url
     url_helpers.url_for(action: 'detail', controller: 'project', only_path: true, id: self.to_param)
