@@ -1,17 +1,20 @@
 require File.expand_path('../boot', __FILE__)
 
 require 'rails/all'
+require 'byebug' if ['development', 'test'].include? Rails.env
 
 if defined?(Bundler)
   Bundler.require(*Rails.groups(:assets => %w(development test)))
 end
 
 module Selfstarter
-  
+
   class Application < Rails::Application
 
     # --- Standard Rails Config ---
-    config.time_zone = 'Pacific Time (US & Canada)'
+    config.time_zone = 'Europe/Berlin'
+    config.i18n.default_locale = :'de-DE'
+    config.i18n.available_locales = ['en-GB', :de]
     config.encoding = "utf-8"
     config.filter_parameters += [:password]
     config.active_record.whitelist_attributes = true

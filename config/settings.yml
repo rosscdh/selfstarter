@@ -12,17 +12,17 @@ project_goal: 100000
 # If you want to edit the FAQ, head over to app/views/preorder/homepage/_faqs.html.erb
 
 # This'll be both the page title (<title></title>) and the name in the header
-product_name: "Selfstarter"
+product_name: "Today Capital - GmBh"
 
 # This will be used in sentences like Hooray You've just reserved product_description
-product_description: "a set of widgets"
+product_description: "CApital investment in property and things"
 
 # An image showcasing your product -- it'll show up when you pin your product
 # It should be in app/assets/images
 product_image_path: "my-product-image.png"
 
 # The message on the preorder page, Lockitron's is ""
-value_proposition: "Roll your own crowdfunding"
+value_proposition: "Become a landlord"
 
 # YouTube or Vimeo Video URL (The embed URL, without the query string options)
 # Replace /embed/ in your video url path with /v/ for video playback to work.
@@ -74,15 +74,15 @@ progress_text: "Implemented"
 # Call to action section
 
 # On Lockitron, it's "First Batch Ships in March 2013"
-ships: "Ships...sometime"
+ships: null
 
 # On Lockitron, it's "Reserve Now"
-call_to_action: "Reserve Now"
+call_to_action: "Invest Now"
 # On Lockitron, this is "Only $149 for a limited time"
-price_human: "It costs money!"
+price_human: "Available for a limited time only"
 
 # The paragraph below the price. You'd probably say something about how you're not going to charge them before it ships (so it's less risky).
-dont_give_them_a_reason_to_say_no: "You'll get this exact site. All you'll need to get started is a great product."
+dont_give_them_a_reason_to_say_no: "Project completion is estimated to be..."
 
 # Social Stuff
 facebook_app_id: "1234567890"

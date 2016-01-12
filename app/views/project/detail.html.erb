@@ -1,8 +1,12 @@
 <div class="wrapper clearfix">
+
+  <h1><%= @project.name %></h1>
+  <p><%= @project.description %></p>
+  <p><%= @project.value_proposition %></p>
   <div id="video">
     <% if @project.video %>
       <div id="video_image">
-        <img alt="video_place_holder" width='512px' height='385px' src="@project.image" />
+        <img alt="video_place_holder" width='512px' height='385px' src="<%= image_path(@project.image) %>" />
       </div>
       <div id="player" class="hidden" style="display: none;">
         <object width="512" height="385">
@@ -20,11 +24,11 @@
   <div id="backing">
     <ul>
       <li class="stats" id="backers">
-        <%= number_with_delimiter Order.backers(@project), :delimiter => "," %>
+        <%= number_with_delimiter @project.num_backers, :delimiter => "," %>
         <span><%= Settings.primary_stat %></span>
       </li>
       <li class="stats">
-        <%= number_to_currency Order.revenue(@project), :precision => 0 %>
+        <%= number_to_currency @project.revenue, :precision => 0 %>
         <span>of <%= number_to_currency @project.project_goal.to_f, :precision => 0 %></span>
       </li>
 
@@ -40,28 +44,28 @@
           </li>
       <% end %>
     </ul>
-    
-    <% if Order.revenue(@project).to_f < @project.project_goal.to_f %>
+
+    <% if @project.revenue.to_f < @project.project_goal.to_f %>
       <div id='progress_bg' class='small'>
-        <div id='progress' class='' style='width: <%= Order.percent(@project) %>%;'>
+        <div id='progress' class='' style='width: <%= @project.percent %>%;'>
         </div>
       </div>
     <% else %>
       <div id="progress_bg">
         <div id="progress">
         </div>
-        <div id='progress_text'><%= Order.percent(@project) %>% <%= Settings.progress_text %></div>
+        <div id='progress_text'><%= @project.percent %>% <%= Settings.progress_text %></div>
       </div>
     <% end %>
-    
+
     <div id="reserve_container">
       <p id="ship_date"><%= Settings.ships %></p>
-      <a href="/preorder/checkout" class="blue_button reserve"><%= Settings.call_to_action %></a>
+      <a href="<%= url_for(action: 'checkout', controller: 'preorder', only_path: true, id: @project.id) %>" class="blue_button reserve"><%= Settings.call_to_action %></a>
       <p id="price"><%= Settings.price_human %></p>
       <p><%= Settings.dont_give_them_a_reason_to_say_no %></p>
       <%= like_button %>
     </div>
-    
+
   </div>
-  
+
 </div>

@@ -2,9 +2,10 @@
   <ul class="">
   <% @projects.each do |project| %>
   <li>
-    <h4><%= project.name %></h4>
+    <h4><a href="<%= project.url %>"><%= project.name %></a><br/><%= number_to_currency project.project_goal.to_f, :precision => 0, :locale => :de %></h4>
+    <small><%= project.value_proposition %></small>
     <div id="video_image">
-      <img alt="video_place_holder" class="img img-responsive" src="@project.image" />
+      <a href="<%= project.url %>"><img alt="video_place_holder" class="img img-responsive" src="<%= image_path(project.image) %>" /></a>
     </div>
   </li>
   <% end %>

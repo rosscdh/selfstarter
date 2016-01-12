@@ -6,9 +6,12 @@ gem 'rails', '4.0.0'
 gem 'json', '~> 1.7.7'
 gem 'rails_admin'
 gem 'devise'
+gem 'rails-i18n'
+
 
 group :development do
   gem 'sqlite3'
+  gem 'byebug'
   gem 'pry-rails'
   gem 'better_errors'
   gem 'binding_of_caller'
