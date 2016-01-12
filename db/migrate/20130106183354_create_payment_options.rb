@@ -6,6 +6,7 @@ class CreatePaymentOptions < ActiveRecord::Migration
       t.text :description
       t.string :shipping_desc
       t.string :delivery_desc
+      t.integer :project_id
       t.integer :limit
 
       t.timestamps

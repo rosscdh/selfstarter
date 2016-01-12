@@ -7,6 +7,10 @@ gem 'json', '~> 1.7.7'
 gem 'rails_admin'
 gem 'devise'
 gem 'rails-i18n'
+gem 'carrierwave'
+gem 'transifex-interface-ruby'
+gem 'friendly_id'
+gem 'puma'
 
 
 group :development do
@@ -18,7 +22,6 @@ group :development do
 end
 
 group :production do
-  gem 'thin'
   gem 'pg'
 end
 

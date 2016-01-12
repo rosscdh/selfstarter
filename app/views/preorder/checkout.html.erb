@@ -13,12 +13,14 @@
         <% end %>
 
       </p>
-      <%= form_tag url_for(action: 'prefill', controller: 'preorder', only_path: true, id: @project.id), :id => "checkout" do %>
+      <%= form_tag url_for(action: 'prefill', controller: 'preorder', only_path: true, slug: @project.slug), :id => "checkout" do %>
         <%= render 'preorder/payment_options' %>
         <div class="checkout_controls">
           <div class="checkout_controls_wrapper">
             <div class="checkout_controls_inner">
               <%= email_field_tag "email", nil, :placeholder => "Email address", :required => "required", :id => "email" %>
+              <%= text_field_tag "price", nil, :placeholder => "Amount to invest", :required => "required", :id => "price" %>
+              <%= hidden_field_tag "project", @project.id %>
               <%= hidden_field_tag "preorder", true %>
               <%= hidden_field_tag "quantity", params[:quantity] %>
               <%= submit_tag "Checkout", :class => "blue_button disabled", :id => "amazon_button" %>

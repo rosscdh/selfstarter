@@ -10,6 +10,7 @@ class Order < ActiveRecord::Base
   def self.prefill!(options = {})
     @order                = Order.new
     @order.name           = options[:name]
+    @order.project_id     = options[:project_id]
     @order.user_id        = options[:user_id]
     @order.price          = options[:price]
     @order.number         = Order.next_order_number

@@ -5,6 +5,21 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+Project.create([
+    {
+        slug: 'example-project-for-investment',
+        name: 'Example Project for investment',
+        value_proposition: 'Invest your money get a 3% ROI over 25 years',
+        project_goal: 25000.00,
+        description: 'Land in Mönchengladbach',
+        payment_description: 'Investment in land and buildings in Mönchengladbach',
+        expiration_date: nil,
+        image: 'https://i.ytimg.com/vi/D1L3o88GKew/hqdefault.jpg',
+        video: 'https://www.youtube.com/v/D1L3o88GKew',
+        status: 1,
+    }
+])
+
 PaymentOption.create(
     [
         {
@@ -13,6 +28,7 @@ PaymentOption.create(
             description: '<strong>Basic level: </strong>You receive a great big thankyou from us!  You Rock',
             shipping_desc: '',
             delivery_desc: '',
+            project_id: nil,
             limit: -1
         },
         {
@@ -21,6 +37,7 @@ PaymentOption.create(
             description: '<strong>Package 1: </strong>You receive our print edition',
             shipping_desc: 'add $3 to ship outside the US',
             delivery_desc: 'Estimated delivery: Oct 2013',
+            project_id: nil,
             limit: 250
         },
         {
@@ -29,6 +46,7 @@ PaymentOption.create(
             description: '<strong>Package 2: </strong>You will receive both our print and digital edition',
             shipping_desc: 'add $3 to ship outside the US',
             delivery_desc: 'Estimated delivery: Oct 2013',
+            project_id: nil,
             limit: -1
         },
         {
@@ -37,6 +55,7 @@ PaymentOption.create(
             description: '<strong>Package 3: </strong>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
             shipping_desc: 'add $3 to ship outside the US',
             delivery_desc: 'Estimated delivery: Oct 2013',
+            project_id: nil,
             limit: -1
         },
         {
@@ -45,6 +64,7 @@ PaymentOption.create(
             description: '<strong>Package 4: </strong>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
             shipping_desc: 'add $3 to ship outside the US',
             delivery_desc: 'Estimated delivery: Oct 2013',
+            project_id: nil,
             limit: -1
         },
         {
@@ -53,6 +73,7 @@ PaymentOption.create(
             description: '<strong>Package 5: </strong>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
             shipping_desc: 'add $3 to ship outside the US',
             delivery_desc: 'Estimated delivery: Oct 2013',
+            project_id: nil,
             limit: -1
         },
         {
@@ -61,6 +82,7 @@ PaymentOption.create(
             description: '<strong>Package 6: </strong>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
             shipping_desc: 'add $3 to ship outside the US',
             delivery_desc: 'Estimated delivery: Oct 2013',
+            project_id: nil,
             limit: -1
         },
         {
@@ -69,6 +91,7 @@ PaymentOption.create(
             description: '<strong>Package 7: </strong>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
             shipping_desc: 'add $3 to ship outside the US',
             delivery_desc: 'Estimated delivery: Oct 2013',
+            project_id: nil,
             limit: -1
         }
     ])

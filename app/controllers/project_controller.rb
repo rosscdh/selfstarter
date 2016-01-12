@@ -6,7 +6,7 @@ class ProjectController < ApplicationController
   end
 
   def detail
-    @project = Project.find params[:id]
+    @project = Project.find params[:slug]
   end
 
   def checkout
