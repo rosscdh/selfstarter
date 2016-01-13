@@ -13,7 +13,7 @@
 
 ActiveRecord::Schema.define(version: 20160112072817) do
 
-  create_table "documents", force: true do |t|
+  create_table "documents", force: :cascade do |t|
     t.string   "name"
     t.string   "document"
     t.integer  "version"
@@ -23,7 +23,7 @@ ActiveRecord::Schema.define(version: 20160112072817) do
     t.datetime "updated_at"
   end
 
-  create_table "friendly_id_slugs", force: true do |t|
+  create_table "friendly_id_slugs", force: :cascade do |t|
     t.string   "slug",                      null: false
     t.integer  "sluggable_id",              null: false
     t.string   "sluggable_type", limit: 50
@@ -36,7 +36,7 @@ ActiveRecord::Schema.define(version: 20160112072817) do
   add_index "friendly_id_slugs", ["sluggable_id"], name: "index_friendly_id_slugs_on_sluggable_id"
   add_index "friendly_id_slugs", ["sluggable_type"], name: "index_friendly_id_slugs_on_sluggable_type"
 
-  create_table "orders", id: false, force: true do |t|
+  create_table "orders", id: false, force: :cascade do |t|
     t.string   "token"
     t.string   "transaction_id"
     t.string   "address_one"
@@ -61,7 +61,7 @@ ActiveRecord::Schema.define(version: 20160112072817) do
     t.integer  "payment_option_id"
   end
 
-  create_table "payment_options", force: true do |t|
+  create_table "payment_options", force: :cascade do |t|
     t.decimal  "amount"
     t.string   "amount_display"
     t.text     "description"
@@ -73,7 +73,7 @@ ActiveRecord::Schema.define(version: 20160112072817) do
     t.datetime "updated_at"
   end
 
-  create_table "projects", force: true do |t|
+  create_table "projects", force: :cascade do |t|
     t.string   "slug"
     t.string   "name"
     t.string   "value_proposition"
@@ -90,7 +90,7 @@ ActiveRecord::Schema.define(version: 20160112072817) do
 
   add_index "projects", ["slug"], name: "index_projects_on_slug", unique: true
 
-  create_table "users", force: true do |t|
+  create_table "users", force: :cascade do |t|
     t.string   "email"
     t.datetime "created_at"
     t.datetime "updated_at"

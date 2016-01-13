@@ -14,13 +14,11 @@ module Selfstarter
 
     # --- Standard Rails Config ---
     config.time_zone = 'Europe/Berlin'
-    config.i18n.default_locale = :'de-DE'
+    config.i18n.default_locale = :'de'
     config.i18n.available_locales = ['en-GB', :de]
     config.encoding = "utf-8"
     config.filter_parameters += [:password]
-    config.active_record.whitelist_attributes = true
-    # Enable the asset pipeline
-    config.assets.enabled = true
+
     # Version of your assets, change this if you want to expire all your assets
     config.assets.version = '1.0'
     # --- Standard Rails Config ---

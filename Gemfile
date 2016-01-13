@@ -23,6 +23,11 @@ gem 'grape-entity'
 # Threaded server
 gem 'puma'
 
+# Make rails sort better
+gem 'protected_attributes'
+gem 'rails-observers'
+gem 'actionpack-page_caching'
+gem 'actionpack-action_caching'
 
 group :development do
   gem 'sqlite3'
@@ -58,7 +63,7 @@ gem 'jquery-ui-rails'
 gem 'amazon_flex_pay'
 
 # Configuration File
-gem 'rails_config'
+gem 'config'
 
 # For Heroku
 gem 'rails_12factor'

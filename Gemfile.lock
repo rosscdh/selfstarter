@@ -14,6 +14,10 @@ GEM
       rack-test (~> 0.6.2)
       rails-dom-testing (~> 1.0, >= 1.0.5)
       rails-html-sanitizer (~> 1.0, >= 1.0.2)
+    actionpack-action_caching (1.1.1)
+      actionpack (>= 4.0.0, < 5.0)
+    actionpack-page_caching (1.0.2)
+      actionpack (>= 4.0.0, < 5)
     actionview (4.2.5)
       activesupport (= 4.2.5)
       builder (~> 3.1)
@@ -149,6 +153,8 @@ GEM
       ast (>= 1.1, < 3.0)
     pg (0.18.4)
     powerpack (0.1.1)
+    protected_attributes (1.1.3)
+      activemodel (>= 4.0.1, < 5.0)
     pry (0.10.3)
       coderay (~> 1.1.0)
       method_source (~> 0.8.1)
@@ -188,6 +194,8 @@ GEM
     rails-i18n (4.0.8)
       i18n (~> 0.7)
       railties (~> 4.0)
+    rails-observers (0.1.2)
+      activemodel (~> 4.0)
     rails_12factor (0.0.3)
       rails_serve_static_assets
       rails_stdout_logging
@@ -205,8 +213,6 @@ GEM
       remotipart (~> 1.0)
       safe_yaml (~> 1.0)
       sass-rails (>= 4.0, < 6)
-    rails_config (0.99.0)
-      config (>= 1.0.0.beta1)
     rails_serve_static_assets (0.0.4)
     rails_stdout_logging (0.0.4)
     railties (4.2.5)
@@ -295,6 +301,8 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  actionpack-action_caching
+  actionpack-page_caching
   amazon_flex_pay
   better_errors
   binding_of_caller
@@ -302,6 +310,7 @@ DEPENDENCIES
   byebug
   carrierwave
   coffee-rails (~> 4.0.0)
+  config
   devise
   friendly_id
   grape
@@ -310,13 +319,14 @@ DEPENDENCIES
   jquery-ui-rails
   json (~> 1.7.7)
   pg
+  protected_attributes
   pry-rails
   puma
   rails (= 4.2.5)
   rails-i18n
+  rails-observers
   rails_12factor
   rails_admin
-  rails_config
   rspec-rails (~> 2.0)
   rubocop
   sass-rails (~> 4.0.0)
