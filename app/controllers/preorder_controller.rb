@@ -6,6 +6,8 @@ class PreorderController < ApplicationController
   end
 
   def checkout
+    @order = Order.new(:project_id => @project.id)
+    @submit_url = url_for(action: 'prefill', controller: 'preorder', only_path: true, slug: @project.slug)
   end
 
   def prefill

@@ -2,14 +2,25 @@ source 'https://rubygems.org'
 
 ruby '2.0.0'
 
-gem 'rails', '4.0.0'
+gem 'rails', '4.2.5'
 gem 'json', '~> 1.7.7'
+# Admin system
 gem 'rails_admin'
+# user Auth
 gem 'devise'
-gem 'rails-i18n'
+# Uploader
 gem 'carrierwave'
+# Translation
+gem 'rails-i18n'
 gem 'transifex-interface-ruby'
+# Forms
+gem 'bootstrap_form'
+# Slugs
 gem 'friendly_id'
+# Api
+gem 'grape'
+gem 'grape-entity'
+# Threaded server
 gem 'puma'
 
 
@@ -19,6 +30,7 @@ group :development do
   gem 'pry-rails'
   gem 'better_errors'
   gem 'binding_of_caller'
+  gem 'rubocop', require: false
 end
 
 group :production do

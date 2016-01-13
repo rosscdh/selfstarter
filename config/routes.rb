@@ -3,12 +3,12 @@ Selfstarter::Application.routes.draw do
   #root :to => 'preorder#index'
   root :to => 'project#index'
 
-  get 'p/:slug'                            => 'project#detail'
+  get 'projects/:slug'                            => 'project#detail'
 
-  match 'p/:slug/preorder'                 => 'preorder#index', :via => [:get,:post]
-  match 'p/:slug/preorder/checkout'        => 'preorder#checkout', :via => [:get,:post]
-  match 'p/:slug/preorder/share/:uuid'     => 'preorder#share', :via => :get
-  match 'p/:slug/preorder/ipn'             => 'preorder#ipn', :via => :post
-  match 'p/:slug/preorder/prefill'         => 'preorder#prefill', :via => [:get,:post]
-  match 'p/:slug/preorder/postfill'        => 'preorder#postfill', :via => [:get,:post]
+  match 'projects/:slug/preorder'                 => 'preorder#index', :via => [:get,:post]
+  match 'projects/:slug/preorder/checkout'        => 'preorder#checkout', :via => [:get,:post]
+  match 'projects/:slug/preorder/share/:uuid'     => 'preorder#share', :via => :get
+  match 'projects/:slug/preorder/ipn'             => 'preorder#ipn', :via => :post
+  match 'projects/:slug/preorder/prefill'         => 'preorder#prefill', :via => [:get,:post]
+  match 'projects/:slug/preorder/postfill'        => 'preorder#postfill', :via => [:get,:post]
 end

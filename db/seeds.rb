@@ -17,6 +17,18 @@ Project.create([
         image: 'https://i.ytimg.com/vi/D1L3o88GKew/hqdefault.jpg',
         video: 'https://www.youtube.com/v/D1L3o88GKew',
         status: 1,
+    },
+    {
+        slug: 'example-project-for-play',
+        name: 'Example Project for plying',
+        value_proposition: 'Invest your cats get a 3% ROI over 25 years of dogs',
+        project_goal: 25000.00,
+        description: 'Mönchengladbach in Germany',
+        payment_description: 'Investment in land and buildings in Köln',
+        expiration_date: nil,
+        image: 'https://i.ytimg.com/vi/D1L3o88GKew/hqdefault.jpg',
+        video: 'https://www.youtube.com/v/D1L3o88GKew',
+        status: 1,
     }
 ])
 
