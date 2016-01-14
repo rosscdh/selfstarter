@@ -20,7 +20,7 @@ Project.create([
     },
     {
         slug: 'example-project-for-play',
-        name: 'Example Project for plying',
+        name: 'Example Project for playing around',
         value_proposition: 'Invest your cats get a 3% ROI over 25 years of dogs',
         project_goal: 25000.00,
         description: 'Mönchengladbach in Germany',

@@ -14,8 +14,8 @@ module Selfstarter
 
     # --- Standard Rails Config ---
     config.time_zone = 'Europe/Berlin'
-    config.i18n.default_locale = :'de'
-    config.i18n.available_locales = ['en-GB', :de]
+    # config.i18n.default_locale = :en
+    # config.i18n.available_locales = ['en-GB', :de]
     config.encoding = "utf-8"
     config.filter_parameters += [:password]
 

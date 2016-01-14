@@ -1,4 +1,12 @@
 ---
+production:
+  adapter: postgresql
+  encoding: unicode
+  database: todaycapital_production
+  pool: 5
+  username: rosscdh
+  password:
+
 development:
   adapter: sqlite3
   database: db/development.sqlite3

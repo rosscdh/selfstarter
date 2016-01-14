@@ -38,9 +38,9 @@ group :development do
   gem 'rubocop', require: false
 end
 
-group :production do
+#group :production do
   gem 'pg'
-end
+#end
 
 # Gems used only for assets and not required
 # in production environments by default.
@@ -51,7 +51,7 @@ group :assets do
 end
 
 group :development, :test do
-  gem 'rspec-rails', '~> 2.0'
+  gem 'rspec-rails'
   gem 'shoulda'
 end
 

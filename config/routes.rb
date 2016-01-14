@@ -1,6 +1,8 @@
 Selfstarter::Application.routes.draw do
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
-  #root :to => 'preorder#index'
+
+  devise_for :users, controllers: { sessions: "users/sessions" }
+
   root :to => 'project#index'
 
   get 'projects/:slug'                            => 'project#detail'
@@ -11,4 +13,5 @@ Selfstarter::Application.routes.draw do
   match 'projects/:slug/preorder/ipn'             => 'preorder#ipn', :via => :post
   match 'projects/:slug/preorder/prefill'         => 'preorder#prefill', :via => [:get,:post]
   match 'projects/:slug/preorder/postfill'        => 'preorder#postfill', :via => [:get,:post]
+
 end

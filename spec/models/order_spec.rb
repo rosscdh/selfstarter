@@ -1,10 +1,12 @@
+require 'spec_helper'
+
 describe Order do
 
   context "attributes" do
 
     [:address_one, :address_two, :city, :country, :number, :state, :status,
       :token, :transaction_id, :zip, :shipping, :tracking_number, :name,
-      :price, :phone, :expiration
+      :price, :phone, :expiration, :project_id
       ].each do |property|
         it { should allow_mass_assignment_of property }
       end
@@ -29,7 +31,8 @@ describe Order do
         @options = {
           name: 'marin',
           user_id: 12983,
-          price: 123.12
+          price: 123.12,
+          project_id: 1
         }
         @order = Order.prefill!(@options)
       end
@@ -73,7 +76,8 @@ describe Order do
           zip: '94041',
           phoneNumber: '650 219 9382',
           country: 'United States',
-          expiry: (Time.now + 99999).to_s
+          expiry: (Time.now + 99999).to_s,
+          project_id: 1
         }
 
         Order.stub!(:find_by_uuid!).and_return orders(:one)
@@ -160,40 +164,41 @@ describe Order do
 
     end
 
-    describe ".percent" do
-      it "calculates the percent based on #goal and #current" do
-        Order.stub(:current).and_return(6.2)
-        Order.stub(:goal).and_return(2.5)
+    # MOVED TO Project model
+    # describe ".percent" do
+    #   it "calculates the percent based on #goal and #current" do
+    #     Order.stub(:current).and_return(6.2)
+    #     Order.stub(:goal).and_return(2.5)
 
-        Order.percent.should == 2.48 * 100
-      end
-    end
+    #     Order.percent.should == 2.48 * 100
+    #   end
+    # end
 
-    describe ".goal" do
-      it "returns the project goal from Settings" do
-        Order.goal.should == Settings.project_goal
-      end
-    end
+    # describe ".goal" do
+    #   it "returns the project goal from Settings" do
+    #     Order.goal.should == Settings.project_goal
+    #   end
+    # end
 
-    describe ".revenue" do
-      it "multiplies the #current with price from Settings" do
-        Order.stub(:current).and_return(4)
-        Settings.stub(:price).and_return(6)
+    # describe ".revenue" do
+    #   it "multiplies the #current with price from Settings" do
+    #     Order.stub(:current).and_return(4)
+    #     Settings.stub(:price).and_return(6)
 
-        Order.revenue.should == 24
-      end
-    end
+    #     Order.revenue.should == 24
+    #   end
+    # end
 
-    describe ".backers" do
-      it "returns the number of orders with valid token / that have been postfilled" do
-        Order.delete_all
-        order = Order.prefill!(name: 'marin', user_id: 1, price: 123.21)
-        Order.backers.should == 0
+    # describe ".backers" do
+    #   it "returns the number of orders with valid token / that have been postfilled" do
+    #     Order.delete_all
+    #     order = Order.prefill!(name: 'marin', user_id: 1, price: 123.21)
+    #     Order.backers.should == 0
 
-        Order.postfill!(callerReference: order.uuid, tokenID: '1232', expiry: '2015-12-24')
-        Order.backers.should == 1
-      end
-    end
+    #     Order.postfill!(callerReference: order.uuid, tokenID: '1232', expiry: '2015-12-24')
+    #     Order.backers.should == 1
+    #   end
+    # end
 
   end
 

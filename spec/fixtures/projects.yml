@@ -1,0 +1,25 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  slug: example-project-for-investment
+  name: Example Project for investment
+  value_proposition: Invest your money get a 3% ROI over 25 years
+  project_goal: 25000.00
+  description: Land in Mönchengladbach
+  payment_description: Investment in land and buildings in Mönchengladbach
+  expiration_date: nil
+  image: https://i.ytimg.com/vi/D1L3o88GKew/hqdefault.jpg
+  video: https://www.youtube.com/v/D1L3o88GKew
+  status: 1
+
+two:
+  slug: example-project-for-play
+  name: Example Project for playing
+  value_proposition: Invest your cats get a 3% ROI over 25 years of dogs
+  project_goal: 25000.00
+  description: Mönchengladbach in Germany
+  payment_description: Investment in land and buildings in Köln
+  expiration_date: nil
+  image: https://i.ytimg.com/vi/D1L3o88GKew/hqdefault.jpg
+  video: https://www.youtube.com/v/D1L3o88GKew
+  status: 1
